@@ -1,0 +1,20 @@
+Attribute VB_Name = "Module1"
+'declare the nessecary API's to play
+'the wav sound of the laser and the
+'background midi.
+'
+Declare Function sndPlaySound Lib "winmm.dll" Alias "sndPlaySoundA" (ByVal lpszSoundName As String, ByVal uFlags As Long) As Long
+Public Declare Function ModPlug_CreateEx Lib "npmod32.dll" (ByVal lpszArgs As String) As Long
+Public Declare Function ModPlug_Destroy Lib "npmod32.dll" (ByVal pPlugin As Long) As Long
+Public Declare Function ModPlug_SetWindow Lib "npmod32.dll" (ByVal pPlugin As Long, ByVal hwnd As Integer) As Long
+Public Declare Function ModPlug_Load Lib "npmod32.dll" (ByVal pPlugin As Long, ByVal lpszFileName As String) As Long
+Public Declare Function ModPlug_Play Lib "npmod32.dll" (ByVal pPlugin As Long) As Long
+Public Declare Function ModPlug_Stop Lib "npmod32.dll" (ByVal pPlugin As Long) As Long
+Public Declare Function ModPlug_SetCurrentPosition Lib "npmod32.dll" (ByVal plugin As Long, ByVal nPos As Long) As Long
+Public Declare Function ModPlug_GetCurrentPosition Lib "npmod32.dll" (ByVal plugin As Long) As Long
+Public Declare Function ModPlug_GetVersion Lib "npmod32.dll" () As Long
+'* 1.91+ *
+
+
+
+

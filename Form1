@@ -1,0 +1,1549 @@
+VERSION 5.00
+Begin VB.Form Form1 
+   BackColor       =   &H00000000&
+   BorderStyle     =   0  'None
+   Caption         =   "Form1"
+   ClientHeight    =   8550
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   10005
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   8550
+   ScaleWidth      =   10005
+   ShowInTaskbar   =   0   'False
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.Timer Timer5 
+      Enabled         =   0   'False
+      Interval        =   10
+      Left            =   7560
+      Top             =   6120
+   End
+   Begin VB.Timer Timerboss 
+      Enabled         =   0   'False
+      Interval        =   10
+      Left            =   7680
+      Top             =   4800
+   End
+   Begin VB.PictureBox life 
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      Height          =   480
+      Left            =   9360
+      Picture         =   "Form1.frx":0000
+      ScaleHeight     =   480
+      ScaleWidth      =   300
+      TabIndex        =   36
+      Top             =   7920
+      Width           =   300
+   End
+   Begin VB.Timer Timer2 
+      Enabled         =   0   'False
+      Interval        =   500
+      Left            =   7680
+      Top             =   3000
+   End
+   Begin VB.Timer Timer4 
+      Interval        =   20
+      Left            =   8640
+      Top             =   3000
+   End
+   Begin VB.Timer Timer3 
+      Interval        =   20
+      Left            =   8160
+      Top             =   3000
+   End
+   Begin VB.Timer Timer1 
+      Interval        =   10
+      Left            =   7200
+      Top             =   3000
+   End
+   Begin VB.PictureBox Picture2 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00000000&
+      ForeColor       =   &H80000008&
+      Height          =   1455
+      Left            =   0
+      ScaleHeight     =   1425
+      ScaleWidth      =   10665
+      TabIndex        =   32
+      Top             =   0
+      Width           =   10695
+      Begin VB.Label Label7 
+         BackColor       =   &H00000000&
+         ForeColor       =   &H0000FF00&
+         Height          =   855
+         Left            =   240
+         TabIndex        =   46
+         Top             =   240
+         Width           =   2655
+      End
+      Begin VB.Label Label6 
+         BackColor       =   &H00000000&
+         Caption         =   "CREDITS"
+         ForeColor       =   &H0000FF00&
+         Height          =   255
+         Left            =   8880
+         TabIndex        =   45
+         Top             =   720
+         Width           =   975
+      End
+      Begin VB.Label Label5 
+         BackColor       =   &H00000000&
+         Caption         =   "OVLÁDÁNÍ"
+         ForeColor       =   &H0000FF00&
+         Height          =   255
+         Left            =   8880
+         TabIndex        =   44
+         Top             =   480
+         Width           =   975
+      End
+      Begin VB.Label Label4 
+         BackColor       =   &H00000000&
+         Caption         =   "EXIT"
+         ForeColor       =   &H0000FF00&
+         Height          =   225
+         Left            =   8880
+         TabIndex        =   43
+         Top             =   960
+         Width           =   735
+      End
+      Begin VB.Image Image1 
+         Height          =   975
+         Left            =   3360
+         Picture         =   "Form1.frx":071D
+         Top             =   0
+         Width           =   4050
+      End
+      Begin VB.Line Line2 
+         BorderColor     =   &H0000FF00&
+         X1              =   0
+         X2              =   9960
+         Y1              =   1320
+         Y2              =   1320
+      End
+      Begin VB.Label score 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "0"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   238
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000080FF&
+         Height          =   300
+         Left            =   5040
+         TabIndex        =   34
+         Top             =   960
+         Width           =   135
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "$"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   238
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000080FF&
+         Height          =   300
+         Left            =   4800
+         TabIndex        =   33
+         Top             =   960
+         Width           =   135
+      End
+   End
+   Begin VB.PictureBox enemycraft1 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   975
+      Left            =   3960
+      Picture         =   "Form1.frx":25C3
+      ScaleHeight     =   975
+      ScaleWidth      =   1245
+      TabIndex        =   17
+      Top             =   1800
+      Width           =   1245
+   End
+   Begin VB.PictureBox enemycraft4 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   975
+      Left            =   5640
+      Picture         =   "Form1.frx":3640
+      ScaleHeight     =   975
+      ScaleWidth      =   1245
+      TabIndex        =   22
+      Top             =   1800
+      Width           =   1245
+   End
+   Begin VB.PictureBox enemycraft2 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      ForeColor       =   &H80000008&
+      Height          =   915
+      Left            =   7920
+      Picture         =   "Form1.frx":46BD
+      ScaleHeight     =   885
+      ScaleWidth      =   990
+      TabIndex        =   20
+      Top             =   2880
+      Width           =   1020
+   End
+   Begin VB.PictureBox enemycraft3 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   885
+      Left            =   2160
+      Picture         =   "Form1.frx":7517
+      ScaleHeight     =   885
+      ScaleWidth      =   990
+      TabIndex        =   21
+      Top             =   1920
+      Width           =   990
+   End
+   Begin VB.PictureBox boom3 
+      BackColor       =   &H00000000&
+      Height          =   525
+      Left            =   1680
+      Picture         =   "Form1.frx":A371
+      ScaleHeight     =   465
+      ScaleWidth      =   525
+      TabIndex        =   31
+      Top             =   6120
+      Visible         =   0   'False
+      Width           =   585
+   End
+   Begin VB.PictureBox boom2 
+      BackColor       =   &H00000000&
+      Height          =   495
+      Left            =   960
+      Picture         =   "Form1.frx":B6CC
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   30
+      Top             =   6120
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox boom1 
+      BackColor       =   &H00000000&
+      Height          =   495
+      Left            =   240
+      Picture         =   "Form1.frx":CA96
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   29
+      Top             =   6120
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   1185
+      Left            =   4560
+      Picture         =   "Form1.frx":E589
+      ScaleHeight     =   1185
+      ScaleWidth      =   795
+      TabIndex        =   4
+      Top             =   6480
+      Width           =   795
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   5
+      Left            =   1680
+      Picture         =   "Form1.frx":F0FC
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   28
+      Top             =   5520
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   4
+      Left            =   960
+      Picture         =   "Form1.frx":FC5F
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   27
+      Top             =   5520
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   3
+      Left            =   240
+      Picture         =   "Form1.frx":10509
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   26
+      Top             =   5520
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   2
+      Left            =   1680
+      Picture         =   "Form1.frx":11231
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   25
+      Top             =   4920
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   1
+      Left            =   960
+      Picture         =   "Form1.frx":11EBA
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   24
+      Top             =   4920
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox e1 
+      Height          =   495
+      Index           =   0
+      Left            =   240
+      Picture         =   "Form1.frx":15EF8
+      ScaleHeight     =   435
+      ScaleWidth      =   555
+      TabIndex        =   23
+      Top             =   4920
+      Visible         =   0   'False
+      Width           =   615
+   End
+   Begin VB.PictureBox energy 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00000000&
+      ForeColor       =   &H80000008&
+      Height          =   6375
+      Left            =   9720
+      ScaleHeight     =   6345
+      ScaleWidth      =   225
+      TabIndex        =   19
+      Top             =   -4200
+      Width           =   255
+   End
+   Begin VB.PictureBox command1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00400000&
+      ForeColor       =   &H80000008&
+      Height          =   135
+      Left            =   9000
+      ScaleHeight     =   105
+      ScaleWidth      =   585
+      TabIndex        =   6
+      Top             =   840
+      Width           =   615
+   End
+   Begin VB.PictureBox rightt 
+      Height          =   495
+      Left            =   1800
+      Picture         =   "Form1.frx":18D52
+      ScaleHeight     =   435
+      ScaleWidth      =   435
+      TabIndex        =   2
+      Top             =   840
+      Visible         =   0   'False
+      Width           =   495
+   End
+   Begin VB.PictureBox rovne 
+      Height          =   495
+      Left            =   1080
+      Picture         =   "Form1.frx":19706
+      ScaleHeight     =   435
+      ScaleWidth      =   435
+      TabIndex        =   1
+      Top             =   840
+      Visible         =   0   'False
+      Width           =   495
+   End
+   Begin VB.PictureBox leftt 
+      Height          =   495
+      Left            =   600
+      Picture         =   "Form1.frx":1A279
+      ScaleHeight     =   435
+      ScaleWidth      =   315
+      TabIndex        =   0
+      Top             =   840
+      Visible         =   0   'False
+      Width           =   375
+   End
+   Begin VB.PictureBox enemyboss 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      ForeColor       =   &H80000008&
+      Height          =   1215
+      Left            =   4200
+      Picture         =   "Form1.frx":1ABFD
+      ScaleHeight     =   1185
+      ScaleWidth      =   2295
+      TabIndex        =   40
+      Top             =   0
+      Width           =   2325
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   11
+      Left            =   6000
+      Picture         =   "Form1.frx":1C99D
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   16
+      Top             =   4560
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   10
+      Left            =   6000
+      Picture         =   "Form1.frx":1CE49
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   15
+      Top             =   5160
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   9
+      Left            =   6000
+      Picture         =   "Form1.frx":1D2F5
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   14
+      Top             =   4800
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   8
+      Left            =   6000
+      Picture         =   "Form1.frx":1D7A1
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   13
+      Top             =   6000
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   7
+      Left            =   6000
+      Picture         =   "Form1.frx":1DC4D
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   12
+      Top             =   5400
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   6
+      Left            =   6000
+      Picture         =   "Form1.frx":1E0F9
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   11
+      Top             =   5640
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   5
+      Left            =   6000
+      Picture         =   "Form1.frx":1E5A5
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   10
+      Top             =   3960
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   4
+      Left            =   6000
+      Picture         =   "Form1.frx":1EA51
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   9
+      Top             =   3720
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   3
+      Left            =   6000
+      Picture         =   "Form1.frx":1EEFD
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   8
+      Top             =   4320
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   1
+      Left            =   6000
+      Picture         =   "Form1.frx":1F3A9
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   7
+      Top             =   3120
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   2
+      Left            =   6000
+      Picture         =   "Form1.frx":1F855
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   5
+      Top             =   3480
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox fire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   90
+      Index           =   0
+      Left            =   6000
+      Picture         =   "Form1.frx":1FD01
+      ScaleHeight     =   90
+      ScaleWidth      =   345
+      TabIndex        =   3
+      Top             =   2880
+      Visible         =   0   'False
+      Width           =   345
+   End
+   Begin VB.PictureBox enemyfire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   165
+      Index           =   3
+      Left            =   3720
+      Picture         =   "Form1.frx":201AD
+      ScaleHeight     =   165
+      ScaleWidth      =   165
+      TabIndex        =   39
+      Top             =   3240
+      Visible         =   0   'False
+      Width           =   165
+   End
+   Begin VB.PictureBox enemyfire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   165
+      Index           =   2
+      Left            =   4080
+      Picture         =   "Form1.frx":2037B
+      ScaleHeight     =   165
+      ScaleWidth      =   165
+      TabIndex        =   38
+      Top             =   3240
+      Visible         =   0   'False
+      Width           =   165
+   End
+   Begin VB.PictureBox enemyfire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   165
+      Index           =   1
+      Left            =   3360
+      Picture         =   "Form1.frx":20549
+      ScaleHeight     =   165
+      ScaleWidth      =   165
+      TabIndex        =   37
+      Top             =   3240
+      Visible         =   0   'False
+      Width           =   165
+   End
+   Begin VB.PictureBox enemyfire 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   165
+      Index           =   0
+      Left            =   3000
+      Picture         =   "Form1.frx":20717
+      ScaleHeight     =   165
+      ScaleWidth      =   165
+      TabIndex        =   18
+      Top             =   3240
+      Visible         =   0   'False
+      Width           =   165
+   End
+   Begin VB.PictureBox bossenergy 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00000000&
+      ForeColor       =   &H80000008&
+      Height          =   6375
+      Left            =   120
+      ScaleHeight     =   6345
+      ScaleWidth      =   195
+      TabIndex        =   41
+      Top             =   -4080
+      Width           =   225
+   End
+   Begin VB.Label Label3 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      Caption         =   "WINNER"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   24
+         Charset         =   238
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   555
+      Left            =   4200
+      TabIndex        =   42
+      Top             =   4320
+      Visible         =   0   'False
+      Width           =   1950
+   End
+   Begin VB.Image Image3 
+      Height          =   6045
+      Left            =   120
+      Picture         =   "Form1.frx":208E5
+      Top             =   2280
+      Visible         =   0   'False
+      Width           =   300
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   238
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   240
+      Left            =   6840
+      TabIndex        =   35
+      Top             =   8040
+      Width           =   45
+   End
+   Begin VB.Line Line3 
+      BorderColor     =   &H000000FF&
+      Index           =   1
+      X1              =   9600
+      X2              =   9720
+      Y1              =   7800
+      Y2              =   7800
+   End
+   Begin VB.Line Line3 
+      BorderColor     =   &H000000FF&
+      Index           =   0
+      X1              =   9600
+      X2              =   9720
+      Y1              =   2400
+      Y2              =   2400
+   End
+   Begin VB.Line Line1 
+      X1              =   4440
+      X2              =   5640
+      Y1              =   4080
+      Y2              =   4560
+   End
+   Begin VB.Image Image2 
+      Height          =   6045
+      Left            =   9720
+      Picture         =   "Form1.frx":22B1D
+      Top             =   2280
+      Width           =   300
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00808080&
+      BackStyle       =   1  'Opaque
+      Height          =   45
+      Index           =   11
+      Left            =   720
+      Shape           =   3  'Circle
+      Top             =   3480
+      Width           =   45
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00808080&
+      BackStyle       =   1  'Opaque
+      Height          =   45
+      Index           =   10
+      Left            =   4560
+      Shape           =   3  'Circle
+      Top             =   5640
+      Width           =   45
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00808080&
+      BackStyle       =   1  'Opaque
+      Height          =   50
+      Index           =   8
+      Left            =   8880
+      Shape           =   3  'Circle
+      Top             =   3600
+      Width           =   50
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   50
+      Index           =   7
+      Left            =   7200
+      Shape           =   3  'Circle
+      Top             =   2040
+      Width           =   50
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   50
+      Index           =   4
+      Left            =   1800
+      Shape           =   3  'Circle
+      Top             =   4800
+      Visible         =   0   'False
+      Width           =   50
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   45
+      Index           =   3
+      Left            =   4800
+      Shape           =   3  'Circle
+      Top             =   4440
+      Width           =   45
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   45
+      Index           =   2
+      Left            =   3600
+      Shape           =   3  'Circle
+      Top             =   2760
+      Width           =   45
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   50
+      Index           =   1
+      Left            =   1080
+      Shape           =   3  'Circle
+      Top             =   1560
+      Width           =   50
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   1  'Opaque
+      Height          =   50
+      Index           =   0
+      Left            =   6720
+      Shape           =   3  'Circle
+      Top             =   7320
+      Width           =   50
+   End
+   Begin VB.Shape hvezda1 
+      BackColor       =   &H00808080&
+      BackStyle       =   1  'Opaque
+      Height          =   45
+      Index           =   12
+      Left            =   1080
+      Shape           =   3  'Circle
+      Top             =   4320
+      Width           =   45
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Rem http://sgames.web2001.cz
+Rem short.man@post.cz
+
+
+Dim boss
+Dim b
+Dim m
+Dim p
+Dim ssmer
+Dim smrt
+Dim u
+Dim fireee
+Dim n
+Dim testc
+Dim testd
+Dim teste
+Dim testg
+
+Dim ff
+Dim d
+Dim e
+Dim g
+Dim c
+Dim smer2
+Dim smer3
+Dim firee
+Dim RetVal As Long
+Dim x
+Dim ModFileName$
+Dim XOX As Integer
+Dim SMERr
+Dim smerl
+
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+If KeyCode = vbKeyC Then
+If life.Visible = True Then
+life.Visible = False
+energy.Top = energy.Top - 2000
+If energy.Top < -3960 Then energy.Top = -3960
+Else
+End If
+End If
+
+If KeyCode = vbKeyX Then
+   If ff > 10 Then ff = -1
+   ff = ff + 1
+  
+  If fire(ff).Visible = False Then
+  fire(ff).Top = Picture1.Top
+  fire(ff).Left = Picture1.Left + 250
+  fire(ff).Visible = True
+  End If
+End If
+
+
+
+
+If KeyCode = vbKeyUp Then
+smer2 = "up"
+End If
+
+If KeyCode = vbKeyDown Then
+smer3 = "down"
+End If
+
+
+If KeyCode = vbKeyLeft Then
+smerl = "LEFT"
+End If
+
+If KeyCode = vbKeyRight Then
+SMERr = "RIGHT"
+End If
+
+End Sub
+
+Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
+
+
+
+
+If KeyCode = vbKeyLeft Then
+smerl = ""
+Picture1.Picture = rovne.Picture
+End If
+
+If KeyCode = vbKeyUp Then smer2 = ""
+If KeyCode = vbKeyDown Then smer3 = ""
+
+
+If KeyCode = vbKeyRight Then
+SMERr = ""
+Picture1.Picture = rovne.Picture
+End If
+
+
+End Sub
+
+Private Sub Form_Load()
+ssmer = "right"
+u = 0
+b = 0
+m = 0
+p = 0
+n = 0
+d = 0
+e = 0
+g = 0
+c = 0
+ff = -1
+x = 0
+ChDir App.Path
+Dim ModFile As String
+ModFile = App.Path & "\Moonlite.dat"
+RetVal = ModPlug_CreateEx("loop|true")
+XOX = ModPlug_SetWindow(RetVal, Form2.hwnd)
+ModFileName$ = ModFile
+XOX = ModPlug_Load(RetVal, ModFileName$)
+XOX = ModPlug_Play(RetVal)
+
+
+
+End Sub
+
+
+Private Sub Picture4_Click()
+energy.Top = energy.Top + 60
+End Sub
+
+Private Sub Picture3_Click()
+Timer2.Enabled = True
+End Sub
+
+Private Sub Label4_Click()
+Close
+XOX = ModPlug_Stop(RetVal)
+XOX = ModPlug_Destroy(RetVal)
+For Each f In Forms
+Unload f
+Next
+Unload Form1
+
+End Sub
+
+Private Sub Label5_Click()
+Label7.Caption = "smìr: šipky  /  x = støelba  /                c = doplnìní života"
+End Sub
+
+Private Sub Label6_Click()
+Label7.Caption = "Tato hry byla naprogramována shortem ve Visual Basic 6.0              kontakt: http://sgames.web2001.cz"
+End Sub
+
+Private Sub Timer1_Timer()
+
+
+If enemyfire(0).Left + enemyfire(0).Width > Picture1.Left And enemyfire(0).Left < Picture1.Left + Picture1.Width And enemyfire(0).Top < Picture1.Top And enemycraft1.Visible = True Then enemyfire(0).Visible = True
+If enemyfire(1).Left + enemyfire(1).Width > Picture1.Left And enemyfire(1).Left < Picture1.Left + Picture1.Width And enemyfire(1).Top < Picture1.Top And enemycraft2.Visible = True Then enemyfire(1).Visible = True
+If enemyfire(2).Left + enemyfire(2).Width > Picture1.Left And enemyfire(2).Left < Picture1.Left + Picture1.Width And enemyfire(2).Top < Picture1.Top And enemycraft3.Visible = True Then enemyfire(2).Visible = True
+If enemyfire(3).Left + enemyfire(3).Width > Picture1.Left And enemyfire(3).Left < Picture1.Left + Picture1.Width And enemyfire(3).Top < Picture1.Top And enemycraft4.Visible = True Then enemyfire(3).Visible = True
+
+
+
+If smerl = "LEFT" Then
+If Picture1.Left < 200 Then
+Else
+Picture1.Left = Picture1.Left - 150
+Picture1.Picture = leftt.Picture
+End If
+End If
+
+
+
+If SMERr = "RIGHT" Then
+If Picture1.Left + Picture1.Width > Form1.Width - 700 Then
+Else
+Picture1.Left = Picture1.Left + 150
+Picture1.Picture = rightt.Picture
+End If
+End If
+
+
+If smer2 = "up" Then
+If Picture1.Top < 1500 Then
+Else
+Picture1.Top = Picture1.Top - 100
+End If
+End If
+
+
+If smer3 = "down" Then
+If Picture1.Top + Picture1.Height > Form1.Height Then
+Else
+Picture1.Top = Picture1.Top + 100
+End If
+End If
+
+
+
+
+
+End Sub
+
+Private Sub Timer2_Timer()
+
+If Label1.Visible = True Then
+Label1.Visible = False
+Else
+Label1.Visible = True
+End If
+
+
+
+If energy.Top + energy.Height < 7800 Then
+Timer2.Enabled = False
+Label1.Caption = ""
+End If
+
+
+
+End Sub
+
+Private Sub Timer3_Timer()
+If score.Caption > 1000 Then
+boss = "ano"
+End If
+
+
+
+
+For q = 0 To 3
+If enemyfire(q).Top > Form1.Width Then enemyfire(q).Visible = False
+Next q
+
+
+If enemyfire(0).Visible = False Then
+enemyfire(0).Top = enemycraft1.Top + 500
+enemyfire(0).Left = enemycraft1.Left + enemycraft1.Width / 2
+Else
+enemyfire(0).Top = enemyfire(0).Top + 300
+End If
+
+If enemyfire(1).Visible = False Then
+enemyfire(1).Top = enemycraft2.Top + 500
+enemyfire(1).Left = enemycraft2.Left + enemycraft2.Width / 2
+Else
+enemyfire(1).Top = enemyfire(1).Top + 300
+End If
+
+If enemyfire(2).Visible = False Then
+enemyfire(2).Top = enemycraft3.Top + 500
+enemyfire(2).Left = enemycraft3.Left + enemycraft3.Width / 2
+Else
+enemyfire(2).Top = enemyfire(2).Top + 300
+End If
+
+If enemyfire(3).Visible = False Then
+enemyfire(3).Top = enemycraft4.Top + 500
+enemyfire(3).Left = enemycraft4.Left + enemycraft4.Width / 2
+Else
+enemyfire(3).Top = enemyfire(3).Top + 300
+End If
+
+
+ For f = 0 To 11
+ If fire(f).Visible = True Then
+ If fire(f).Top < 1320 Then fire(f).Visible = False
+ fire(f).Top = fire(f).Top - 300
+ End If
+ Next f
+ 
+ 
+
+hvezda1(0).Top = hvezda1(0).Top + 150
+If hvezda1(0).Top > Form1.Height Then hvezda1(0).Top = 0
+hvezda1(3).Top = hvezda1(3).Top + 100
+If hvezda1(3).Top > Form1.Height Then hvezda1(3).Top = 0
+hvezda1(2).Top = hvezda1(2).Top + 170
+If hvezda1(2).Top > Form1.Height Then hvezda1(2).Top = 0
+hvezda1(1).Top = hvezda1(1).Top + 170
+If hvezda1(1).Top > Form1.Height Then hvezda1(1).Top = 0
+
+hvezda1(12).Top = hvezda1(12).Top + 100
+If hvezda1(12).Top > Form1.Height Then hvezda1(12).Top = 0
+hvezda1(8).Top = hvezda1(8).Top + 100
+If hvezda1(8).Top > Form1.Height Then hvezda1(8).Top = 0
+hvezda1(10).Top = hvezda1(10).Top + 100
+If hvezda1(10).Top > Form1.Height Then hvezda1(10).Top = 0
+hvezda1(7).Top = hvezda1(7).Top + 100
+If hvezda1(7).Top > Form1.Height Then hvezda1(7).Top = 0
+hvezda1(11).Top = hvezda1(11).Top + 100
+If hvezda1(11).Top > Form1.Height Then hvezda1(11).Top = 0
+
+
+
+
+
+If Picture1.Left + Picture1.Width > enemycraft1.Left And Picture1.Left < enemycraft1.Left + enemycraft1.Width And Picture1.Top + Picture1.Height > enemycraft1.Top And Picture1.Top < enemycraft1.Top + enemycraft1.Height And enemycraft1.Visible = True Then
+energy.Top = energy.Top + 120
+testc = "ano"
+End If
+
+If Picture1.Left + Picture1.Width > enemycraft2.Left And Picture1.Left < enemycraft2.Left + enemycraft2.Width And Picture1.Top + Picture1.Height > enemycraft2.Top And Picture1.Top < enemycraft2.Top + enemycraft2.Height And enemycraft2.Visible = True Then
+energy.Top = energy.Top + 120
+testd = "ano"
+End If
+
+If Picture1.Left + Picture1.Width > enemycraft3.Left And Picture1.Left < enemycraft3.Left + enemycraft3.Width And Picture1.Top + Picture1.Height > enemycraft3.Top And Picture1.Top < enemycraft3.Top + enemycraft3.Height And enemycraft3.Visible = True Then
+energy.Top = energy.Top + 120
+teste = "ano"
+End If
+
+If Picture1.Left + Picture1.Width > enemycraft4.Left And Picture1.Left < enemycraft4.Left + enemycraft4.Width And Picture1.Top + Picture1.Height > enemycraft4.Top And Picture1.Top < enemycraft4.Top + enemycraft4.Height And enemycraft4.Visible = True Then
+energy.Top = energy.Top + 120
+testg = "ano"
+End If
+
+If energy.Top + energy.Height > 8300 Then
+smrt = "ano"
+End If
+
+
+
+enemycraft1.Top = enemycraft1.Top + 100
+enemycraft2.Top = enemycraft2.Top + 150
+enemycraft4.Top = enemycraft4.Top + 100
+enemycraft3.Top = enemycraft3.Top + 150
+Rem
+
+Rem boss
+If boss = "ano" Then
+If enemyboss.Top > 2700 Then
+Timerboss.Enabled = True
+Timer3.Enabled = False
+enemyfire(0).Visible = False
+enemyfire(1).Visible = False
+enemyfire(2).Visible = False
+enemyfire(3).Visible = False
+Image3.Visible = True
+Else
+enemyboss.Top = enemyboss.Top + 20
+End If
+Else
+
+If enemycraft1.Top > Form1.Width Then
+enemycraft1.Visible = True
+c = 0
+enemycraft4.Visible = True
+g = 0
+
+Randomize
+en = Int(5 * (Rnd + 0))
+enemycraft1.Picture = e1(en).Picture
+enemycraft4.Picture = e1(en).Picture
+enemycraft1.Top = 0
+Randomize
+r1 = Int(8000 * (Rnd + 0))
+enemycraft1.Left = r1
+End If
+
+If enemycraft4.Top > Form1.Width Then
+enemycraft4.Visible = True
+g = 0
+enemycraft4.Top = 0
+Randomize
+r4 = Int(8000 * (Rnd + 0))
+enemycraft4.Left = r4
+End If
+Rem
+
+If enemycraft2.Top > Form1.Width Then
+enemycraft2.Visible = True
+d = 0
+enemycraft2.Top = -500
+Randomize
+r2 = Int(8000 * (Rnd + 0))
+enemycraft2.Left = r2
+End If
+
+
+If enemycraft3.Top > Form1.Width Then
+enemycraft3.Visible = True
+e = 0
+enemycraft3.Top = -500
+Randomize
+r3 = Int(8000 * (Rnd + 0))
+enemycraft3.Left = r3
+Randomize
+en = Int(5 * (Rnd + 0))
+enemycraft2.Picture = e1(en).Picture
+enemycraft3.Picture = e1(en).Picture
+End If
+
+
+
+Rem boss
+End If
+Rem boss
+
+End Sub
+
+Private Sub Timer4_Timer()
+
+
+If enemycraft3.Left + enemycraft3.Width > enemycraft2.Left And enemycraft3.Left < enemycraft2.Left + enemycraft2.Width Then enemycraft3.Left = enemycraft3.Left + 50
+If enemycraft2.Left + enemycraft2.Width > enemycraft3.Left And enemycraft2.Left < enemycraft3.Left + enemycraft3.Width Then enemycraft2.Left = enemycraft2.Left - 50
+
+If enemycraft2.Left + enemycraft2.Width > enemycraft1.Left And enemycraft2.Left < enemycraft1.Left + enemycraft1.Width Then enemycraft2.Left = enemycraft2.Left - 50
+If enemycraft2.Left + enemycraft2.Width > enemycraft4.Left And enemycraft2.Left < enemycraft4.Left + enemycraft4.Width Then enemycraft2.Left = enemycraft2.Left + 50
+
+If enemycraft3.Left + enemycraft3.Width > enemycraft1.Left And enemycraft3.Left < enemycraft1.Left + enemycraft1.Width Then enemycraft3.Left = enemycraft3.Left - 50
+If enemycraft3.Left + enemycraft3.Width > enemycraft4.Left And enemycraft3.Left < enemycraft4.Left + enemycraft4.Width Then enemycraft3.Left = enemycraft3.Left + 50
+
+If enemycraft1.Left + enemycraft1.Width > enemycraft4.Left And enemycraft1.Left < enemycraft4.Left + enemycraft4.Width Then enemycraft1.Left = enemycraft1.Left - 50
+If enemycraft4.Left + enemycraft4.Width > enemycraft1.Left And enemycraft4.Left < enemycraft1.Left + enemycraft1.Width Then enemycraft4.Left = enemycraft4.Left + 50
+
+
+For w = 0 To 3
+If Picture1.Left + Picture1.Width > enemyfire(w).Left And Picture1.Left < enemyfire(w).Left + enemyfire(w).Width And Picture1.Top + Picture1.Height > enemyfire(w).Top And Picture1.Top < enemyfire(w).Top + enemyfire(w).Height And enemyfire(w).Visible = True Then
+enemyfire(w).Visible = False
+energy.Top = energy.Top + 360
+End If
+Next w
+
+For o = 0 To 11
+If fire(o).Left + fire(o).Width > enemycraft1.Left And fire(o).Left < enemycraft1.Left + enemycraft1.Width And fire(o).Top + fire(o).Height > enemycraft1.Top And fire(o).Top < enemycraft1.Top + enemycraft1.Height And enemycraft1.Visible = True And fire(o).Visible = True Then
+fire(o).Visible = False
+testc = "ano"
+End If
+
+If fire(o).Left + fire(o).Width > enemycraft2.Left And fire(o).Left < enemycraft2.Left + enemycraft2.Width And fire(o).Top + fire(o).Height > enemycraft2.Top And fire(o).Top < enemycraft2.Top + enemycraft2.Height And enemycraft2.Visible = True And fire(o).Visible = True Then
+fire(o).Visible = False
+testd = "ano"
+End If
+
+If fire(o).Left + fire(o).Width > enemycraft3.Left And fire(o).Left < enemycraft3.Left + enemycraft3.Width And fire(o).Top + fire(o).Height > enemycraft3.Top And fire(o).Top < enemycraft3.Top + enemycraft3.Height And enemycraft3.Visible = True And fire(o).Visible = True Then
+fire(o).Visible = False
+teste = "ano"
+End If
+
+If fire(o).Left + fire(o).Width > enemycraft4.Left And fire(o).Left < enemycraft4.Left + enemycraft4.Width And fire(o).Top + fire(o).Height > enemycraft4.Top And fire(o).Top < enemycraft4.Top + enemycraft4.Height And enemycraft4.Visible = True And fire(o).Visible = True Then
+fire(o).Visible = False
+testg = "ano"
+End If
+Next o
+
+
+
+
+If testg = "ano" Then
+g = g + 1
+If g = 1 Then enemycraft4.Picture = boom1.Picture
+If g = 2 Then enemycraft4.Picture = boom2.Picture
+If g = 3 Then enemycraft4.Picture = boom3.Picture
+If g = 4 Then enemycraft4.Visible = False
+If g = 4 Then score = score + 12
+If g = 4 Then testg = "ne"
+End If
+
+If teste = "ano" Then
+e = e + 1
+If e = 1 Then enemycraft3.Picture = boom1.Picture
+If e = 2 Then enemycraft3.Picture = boom2.Picture
+If e = 3 Then enemycraft3.Picture = boom3.Picture
+If e = 4 Then enemycraft3.Visible = False
+If e = 4 Then score = score + 12
+If e = 4 Then teste = "ne"
+End If
+
+If testd = "ano" Then
+d = d + 1
+If d = 1 Then enemycraft2.Picture = boom1.Picture
+If d = 2 Then enemycraft2.Picture = boom2.Picture
+If d = 3 Then enemycraft2.Picture = boom3.Picture
+If d = 4 Then enemycraft2.Visible = False
+If d = 4 Then score = score + 12
+If d = 4 Then testd = "ne"
+End If
+
+
+If testc = "ano" Then
+c = c + 1
+If c = 1 Then enemycraft1.Picture = boom1.Picture
+If c = 2 Then enemycraft1.Picture = boom2.Picture
+If c = 3 Then enemycraft1.Picture = boom3.Picture
+If c = 4 Then enemycraft1.Visible = False
+If c = 4 Then score = score + 12
+If c = 4 Then testc = "ne"
+End If
+
+If smrt = "ano" Then
+n = n + 1
+If n = 1 Then Picture1.Picture = boom1.Picture
+If n = 2 Then Picture1.Picture = boom2.Picture
+If n = 3 Then Picture1.Picture = boom3.Picture
+If n = 4 Then Picture1.Visible = False
+
+If n = 4 Then
+Timer1.Enabled = False
+Timer3.Enabled = False
+Form1.KeyPreview = False
+End If
+
+End If
+
+If energy.Top + energy.Height > 7800 Then
+If Timer1.Enabled = False Then
+Label1.Caption = "GAME OVER"
+Else
+Label1.Caption = "WARNING - SHIELD LOW !!"
+Timer2.Enabled = True
+End If
+End If
+
+End Sub
+
+Private Sub Timer5_Timer()
+b = b + 10
+Label3.ForeColor = RGB(0, b, 0)
+End Sub
+
+Private Sub Timerboss_Timer()
+
+If ssmer = "right" Then
+enemyboss.Left = enemyboss.Left + 40
+If enemyboss.Left > 6000 Then
+ssmer = "left"
+End If
+Else
+enemyboss.Left = enemyboss.Left - 40
+If enemyboss.Left < 1000 Then
+ssmer = "right"
+End If
+End If
+
+
+If energy.Top > 2040 Then
+
+p = p + 1
+If p = 1 Then Picture1.Picture = boom1.Picture
+If p = 2 Then Picture1.Picture = boom2.Picture
+If p = 3 Then Picture1.Picture = boom3.Picture
+If p = 4 Then Picture1.Visible = False
+If p = 4 Then score = score + 12
+Label3.Visible = True
+Timer5.Enabled = True
+Label3.Caption = "GAME OVER"
+Timer1.Enabled = False
+Timer2.Enabled = False
+Timer3.Enabled = False
+Timer4.Enabled = False
+End If
+
+
+
+
+If bossenergy.Top > 2040 Then
+
+m = m + 1
+If m = 1 Then enemyboss.Picture = boom1.Picture
+If m = 2 Then enemyboss.Picture = boom2.Picture
+If m = 3 Then enemyboss.Picture = boom3.Picture
+If m = 4 Then enemyboss.Visible = False
+If m = 4 Then score = score + 12
+Label3.Visible = True
+Timer5.Enabled = True
+Timer1.Enabled = False
+Timer2.Enabled = False
+Timer3.Enabled = False
+Timer4.Enabled = False
+End If
+
+
+
+
+
+
+If enemyfire(0).Left + enemyfire(0).Width > Picture1.Left And enemyfire(0).Left < Picture1.Left + Picture1.Width And enemyfire(0).Top < Picture1.Top And enemyboss.Visible = True Then enemyfire(0).Visible = True
+If enemyfire(1).Left + enemyfire(1).Width > Picture1.Left And enemyfire(1).Left < Picture1.Left + Picture1.Width And enemyfire(1).Top < Picture1.Top And enemyboss.Visible = True Then enemyfire(1).Visible = True
+If enemyfire(2).Left + enemyfire(2).Width > Picture1.Left And enemyfire(2).Left < Picture1.Left + Picture1.Width And enemyfire(2).Top < Picture1.Top And enemyboss.Visible = True Then enemyfire(2).Visible = True
+If enemyfire(3).Left + enemyfire(3).Width > Picture1.Left And enemyfire(3).Left < Picture1.Left + Picture1.Width And enemyfire(3).Top < Picture1.Top And enemyboss.Visible = True Then enemyfire(3).Visible = True
+
+
+
+For q = 0 To 3
+If enemyfire(q).Top > Form1.Width Then enemyfire(q).Visible = False
+Next q
+
+
+If enemyfire(0).Visible = False Then
+enemyfire(0).Top = enemyboss.Top + 500
+enemyfire(0).Left = enemyboss.Left + enemyfire(0).Width
+Else
+enemyfire(0).Top = enemyfire(0).Top + 300
+End If
+
+If enemyfire(1).Visible = False Then
+enemyfire(1).Top = enemyboss.Top + 500
+enemyfire(1).Left = enemyboss.Left + 700
+Else
+enemyfire(1).Top = enemyfire(1).Top + 300
+End If
+
+If enemyfire(2).Visible = False Then
+enemyfire(2).Top = enemyboss.Top + 500
+enemyfire(2).Left = enemyboss.Left + 1500
+Else
+enemyfire(2).Top = enemyfire(2).Top + 300
+End If
+
+If enemyfire(3).Visible = False Then
+enemyfire(3).Top = enemyboss.Top + 500
+enemyfire(3).Left = enemyboss.Left + enemyboss.Width - enemyfire(3).Width
+Else
+enemyfire(3).Top = enemyfire(3).Top + 300
+End If
+
+
+
+
+ For f = 0 To 11
+ If fire(f).Visible = True Then
+ If fire(f).Top < 1320 Then fire(f).Visible = False
+ fire(f).Top = fire(f).Top - 300
+ End If
+ Next f
+ 
+hvezda1(0).Top = hvezda1(0).Top + 150
+If hvezda1(0).Top > Form1.Height Then hvezda1(0).Top = 0
+hvezda1(3).Top = hvezda1(3).Top + 100
+If hvezda1(3).Top > Form1.Height Then hvezda1(3).Top = 0
+hvezda1(2).Top = hvezda1(2).Top + 170
+If hvezda1(2).Top > Form1.Height Then hvezda1(2).Top = 0
+hvezda1(1).Top = hvezda1(1).Top + 170
+If hvezda1(1).Top > Form1.Height Then hvezda1(1).Top = 0
+
+hvezda1(12).Top = hvezda1(12).Top + 100
+If hvezda1(12).Top > Form1.Height Then hvezda1(12).Top = 0
+hvezda1(8).Top = hvezda1(8).Top + 100
+If hvezda1(8).Top > Form1.Height Then hvezda1(8).Top = 0
+hvezda1(10).Top = hvezda1(10).Top + 100
+If hvezda1(10).Top > Form1.Height Then hvezda1(10).Top = 0
+hvezda1(7).Top = hvezda1(7).Top + 100
+If hvezda1(7).Top > Form1.Height Then hvezda1(7).Top = 0
+hvezda1(11).Top = hvezda1(11).Top + 100
+If hvezda1(11).Top > Form1.Height Then hvezda1(11).Top = 0
+
+
+
+
+
+For o = 0 To 5
+If fire(o).Left + fire(o).Width > enemyboss.Left And fire(o).Left < enemyboss.Left + enemyboss.Width And fire(o).Top + fire(o).Height > enemyboss.Top And fire(o).Top < enemyboss.Top + enemyboss.Height And enemyboss.Visible = True And fire(o).Visible = True Then
+fire(o).Visible = False
+bossenergy.Top = bossenergy.Top + 60
+End If
+Next o
+
+
+End Sub
